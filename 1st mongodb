@@ -1,0 +1,865 @@
+Last login: Wed May 14 11:13:46 on ttys000
+/Users/sakshisingh/Downloads/mongosh-2.5.1-darwin-arm64/bin/mongosh ; exit;     
+(base) sakshisingh@Sakshis-MacBook-Air ~ % /Users/sakshisingh/Downloads/mongosh-2.5.1-darwin-arm64/bin/mongosh ; exit;
+Current Mongosh Log ID:	68242efbf90170c8d3ed7c9d
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.1
+Using MongoDB:		8.0.9
+Using Mongosh:		2.5.1
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2025-05-14T11:13:51.477+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2025-05-14T11:13:51.477+05:30: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+   2025-05-14T11:13:51.477+05:30: Soft rlimits for open file descriptors too low
+------
+
+test> db
+test
+test> show dbs
+admin        40.00 KiB
+config       60.00 KiB
+local        40.00 KiB
+restaurant  240.00 KiB
+test> use sample930
+switched to db sample930
+sample930> db.restaurant.find()
+
+sample930> use restaurant
+switched to db restaurant
+restaurant> db.restaurant.find()
+[
+  {
+    _id: ObjectId('55f14312c7447c3da7051b26'),
+    URL: 'http://www.just-eat.co.uk/restaurants-cn-chinese-cardiff/menu',
+    address: '228 City Road',
+    'address line 2': 'Cardiff',
+    name: '.CN Chinese',
+    outcode: 'CF24',
+    postcode: '3JH',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b27'),
+    URL: 'http://www.just-eat.co.uk/restaurants-atthai-ss9/menu',
+    address: '376 Rayleigh Road',
+    'address line 2': 'Essex',
+    name: '@ Thai',
+    outcode: 'SS9',
+    postcode: '5PT',
+    rating: 5.5,
+    type_of_food: 'Thai'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b28'),
+    URL: 'http://www.just-eat.co.uk/restaurants-atthairestaurant/menu',
+    address: '30 Greyhound Road Hammersmith',
+    'address line 2': 'London',
+    name: '@ Thai Restaurant',
+    outcode: 'W6',
+    postcode: '8NX',
+    rating: 4.5,
+    type_of_food: 'Thai'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b29'),
+    URL: 'http://www.just-eat.co.uk/restaurants-atthairestaurant/menu',
+    address: '30 Greyhound Road Hammersmith',
+    'address line 2': 'London',
+    name: '@ Thai Restaurant',
+    outcode: 'W6',
+    postcode: '8NX',
+    rating: 4.5,
+    type_of_food: 'Thai'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2a'),
+    URL: 'http://www.just-eat.co.uk/restaurants-indiancom-ch4/menu',
+    address: '9 Broughton Hall Road',
+    'address line 2': 'Broughton',
+    name: '@Indian.com',
+    outcode: 'CH4',
+    postcode: '0QR',
+    rating: 6,
+    type_of_food: 'Curry'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2b'),
+    URL: 'http://www.just-eat.co.uk/restaurants-007takeaway-s65/menu',
+    address: '6 Drummond Street',
+    'address line 2': 'Rotherham',
+    name: '007 Takeaway',
+    outcode: 'S65',
+    postcode: '1HY',
+    rating: 6,
+    type_of_food: 'Pizza'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2c'),
+    URL: 'http://www.just-eat.co.uk/restaurants-042-restaurant-e11/menu',
+    address: '885 High Road Leytonstone',
+    'address line 2': 'London',
+    name: '042 Restaurant & Bar',
+    outcode: 'E11',
+    postcode: '1HR',
+    rating: 3,
+    type_of_food: 'African'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2d'),
+    URL: 'http://www.just-eat.co.uk/restaurants-042-restaurant-e11/menu',
+    address: '885 High Road Leytonstone',
+    'address line 2': 'London',
+    name: '042 Restaurant & Bar',
+    outcode: 'E11',
+    postcode: '1HR',
+    rating: 3,
+    type_of_food: 'African'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2e'),
+    URL: 'http://www.just-eat.co.uk/restaurants-042-restaurant-e11/menu',
+    address: '885 High Road Leytonstone',
+    'address line 2': 'London',
+    name: '042 Restaurant & Bar',
+    outcode: 'E11',
+    postcode: '1HR',
+    rating: 3,
+    type_of_food: 'African'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2f'),
+    URL: 'http://www.just-eat.co.uk/restaurants-1-2-3-chinese-rowlands-gill/menu',
+    address: 'Unit 4 Spencer House',
+    'address line 2': 'Swalwell',
+    name: '1 2 3 Chinese',
+    outcode: 'NE16',
+    postcode: '3DS',
+    rating: 4.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b30'),
+    URL: 'http://www.just-eat.co.uk/restaurants-1-2-3-chinese-rowlands-gill/menu',
+    address: 'Unit 4 Spencer House',
+    'address line 2': 'Swalwell',
+    name: '1 2 3 Chinese',
+    outcode: 'NE16',
+    postcode: '3DS',
+    rating: 4.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b31'),
+    URL: 'http://www.just-eat.co.uk/restaurants-100-degrees-chinese-restaurant-pontypridd/menu',
+    address: '67 Park Street',
+    'address line 2': 'Treforest',
+    name: '100 Degrees Chinese Restaurant',
+    outcode: 'CF37',
+    postcode: '1SN',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b32'),
+    URL: 'http://www.just-eat.co.uk/restaurants-100menu-wn1/menu',
+    address: '50 Wallgate',
+    'address line 2': 'Wigan',
+    name: '100 Menu',
+    outcode: 'WN1',
+    postcode: '1JU',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b33'),
+    URL: 'http://www.just-eat.co.uk/restaurants-104-turkish-BBQ/menu',
+    address: '104 Tanners Lane',
+    'address line 2': 'Essex',
+    name: '104 Turkish BBQ',
+    outcode: 'IG6',
+    postcode: '1QE',
+    rating: 5,
+    type_of_food: 'Turkish'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b34'),
+    URL: 'http://www.just-eat.co.uk/restaurants-109restaurant-w2/menu',
+    address: '109 Westbourne Park Road',
+    'address line 2': 'London',
+    name: '109 Ristorante',
+    outcode: 'W2',
+    postcode: '5QL',
+    rating: 5,
+    type_of_food: 'Pizza'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b35'),
+    URL: 'http://www.just-eat.co.uk/restaurants-113-fish-bar-wallasey/menu',
+    address: '113 Poulton Road',
+    'address line 2': 'Merseyside',
+    name: '113 Fish Bar',
+    outcode: 'CH44',
+    postcode: '9DE',
+    rating: 5.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b36'),
+    URL: 'http://www.just-eat.co.uk/restaurants-133-takeaway-irvine/menu',
+    address: '133 Fullarton Street',
+    'address line 2': 'Irvine',
+    name: '133 Takeaway',
+    outcode: 'KA12',
+    postcode: '8DG',
+    rating: 'Not yet rated',
+    type_of_food: 'Breakfast'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b37'),
+    URL: 'http://www.just-eat.co.uk/restaurants-1498thespiceaffair-pe11/menu',
+    address: 'Red Lion Hotel',
+    'address line 2': 'Spalding',
+    name: '1498 The Spice Affair',
+    outcode: 'PE11',
+    postcode: '1SU',
+    rating: 5.5,
+    type_of_food: 'Curry'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b38'),
+    URL: 'http://www.just-eat.co.uk/restaurants-168chinese-ls18/menu',
+    address: '17 Alexandra Road',
+    'address line 2': 'West Yorkshire',
+    name: '168 Chinese & Cantonese Takeaway',
+    outcode: 'LS18',
+    postcode: '4HE',
+    rating: 5.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b39'),
+    URL: 'http://www.just-eat.co.uk/restaurants-1awok-pa7/menu',
+    address: 'Unit 2 30 Greenock Road',
+    'address line 2': 'Bishopton',
+    name: '1A Wok',
+    outcode: 'PA7',
+    postcode: '5JN',
+    rating: 5,
+    type_of_food: 'Chinese'
+  }
+]
+Type "it" for more
+restaurant> db.restaurents.findOne()
+null
+restaurant> db.restaurents.find({},{name:1,type_of_food:1})
+
+restaurant>  db.restaurent.findOne()
+null
+restaurant>  db.restaurent.find({},{name:1,type_of_food:1})
+
+restaurant> db.restaurant.findOne()
+{
+  _id: ObjectId('55f14312c7447c3da7051b26'),
+  URL: 'http://www.just-eat.co.uk/restaurants-cn-chinese-cardiff/menu',
+  address: '228 City Road',
+  'address line 2': 'Cardiff',
+  name: '.CN Chinese',
+  outcode: 'CF24',
+  postcode: '3JH',
+  rating: 5,
+  type_of_food: 'Chinese'
+}
+restaurant> db.restaurant.find({},{name:1,type_of_food:1})
+[
+  {
+    _id: ObjectId('55f14312c7447c3da7051b26'),
+    name: '.CN Chinese',
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b27'),
+    name: '@ Thai',
+    type_of_food: 'Thai'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b28'),
+    name: '@ Thai Restaurant',
+    type_of_food: 'Thai'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b29'),
+    name: '@ Thai Restaurant',
+    type_of_food: 'Thai'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2a'),
+    name: '@Indian.com',
+    type_of_food: 'Curry'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2b'),
+    name: '007 Takeaway',
+    type_of_food: 'Pizza'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2c'),
+    name: '042 Restaurant & Bar',
+    type_of_food: 'African'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2d'),
+    name: '042 Restaurant & Bar',
+    type_of_food: 'African'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2e'),
+    name: '042 Restaurant & Bar',
+    type_of_food: 'African'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2f'),
+    name: '1 2 3 Chinese',
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b30'),
+    name: '1 2 3 Chinese',
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b31'),
+    name: '100 Degrees Chinese Restaurant',
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b32'),
+    name: '100 Menu',
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b33'),
+    name: '104 Turkish BBQ',
+    type_of_food: 'Turkish'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b34'),
+    name: '109 Ristorante',
+    type_of_food: 'Pizza'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b35'),
+    name: '113 Fish Bar',
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b36'),
+    name: '133 Takeaway',
+    type_of_food: 'Breakfast'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b37'),
+    name: '1498 The Spice Affair',
+    type_of_food: 'Curry'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b38'),
+    name: '168 Chinese & Cantonese Takeaway',
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b39'),
+    name: '1A Wok',
+    type_of_food: 'Chinese'
+  }
+]
+Type "it" for more
+restaurant> db.restaurant.find({type_of_food:"Chinese"})"
+Uncaught:
+SyntaxError: Unterminated string constant. (1:44)
+
+> 1 | db.restaurant.find({type_of_food:"Chinese"})"
+    |                                             ^
+  2 |
+
+restaurant> restaurant> restaurant> db.restaurant.find({type_of_food:"Chinese"})
+ReferenceError: restaurant is not defined
+restaurant> db.restaurant.find({type_of_food:"Chinese"})
+[
+  {
+    _id: ObjectId('55f14312c7447c3da7051b26'),
+    URL: 'http://www.just-eat.co.uk/restaurants-cn-chinese-cardiff/menu',
+    address: '228 City Road',
+    'address line 2': 'Cardiff',
+    name: '.CN Chinese',
+    outcode: 'CF24',
+    postcode: '3JH',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2f'),
+    URL: 'http://www.just-eat.co.uk/restaurants-1-2-3-chinese-rowlands-gill/menu',
+    address: 'Unit 4 Spencer House',
+    'address line 2': 'Swalwell',
+    name: '1 2 3 Chinese',
+    outcode: 'NE16',
+    postcode: '3DS',
+    rating: 4.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b30'),
+    URL: 'http://www.just-eat.co.uk/restaurants-1-2-3-chinese-rowlands-gill/menu',
+    address: 'Unit 4 Spencer House',
+    'address line 2': 'Swalwell',
+    name: '1 2 3 Chinese',
+    outcode: 'NE16',
+    postcode: '3DS',
+    rating: 4.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b31'),
+    URL: 'http://www.just-eat.co.uk/restaurants-100-degrees-chinese-restaurant-pontypridd/menu',
+    address: '67 Park Street',
+    'address line 2': 'Treforest',
+    name: '100 Degrees Chinese Restaurant',
+    outcode: 'CF37',
+    postcode: '1SN',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b32'),
+    URL: 'http://www.just-eat.co.uk/restaurants-100menu-wn1/menu',
+    address: '50 Wallgate',
+    'address line 2': 'Wigan',
+    name: '100 Menu',
+    outcode: 'WN1',
+    postcode: '1JU',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b35'),
+    URL: 'http://www.just-eat.co.uk/restaurants-113-fish-bar-wallasey/menu',
+    address: '113 Poulton Road',
+    'address line 2': 'Merseyside',
+    name: '113 Fish Bar',
+    outcode: 'CH44',
+    postcode: '9DE',
+    rating: 5.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b38'),
+    URL: 'http://www.just-eat.co.uk/restaurants-168chinese-ls18/menu',
+    address: '17 Alexandra Road',
+    'address line 2': 'West Yorkshire',
+    name: '168 Chinese & Cantonese Takeaway',
+    outcode: 'LS18',
+    postcode: '4HE',
+    rating: 5.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b39'),
+    URL: 'http://www.just-eat.co.uk/restaurants-1awok-pa7/menu',
+    address: 'Unit 2 30 Greenock Road',
+    'address line 2': 'Bishopton',
+    name: '1A Wok',
+    outcode: 'PA7',
+    postcode: '5JN',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b55'),
+    URL: 'http://www.just-eat.co.uk/restaurants-328chineseonline-cf81/menu',
+    address: '2-4 Commercial Street',
+    'address line 2': 'Aberbargoed',
+    name: '328 Chinese Online',
+    outcode: 'CF81',
+    postcode: '9BW',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b56'),
+    URL: 'http://www.just-eat.co.uk/restaurants-333-Chinese-FY4/menu',
+    address: '276 Waterloo Road',
+    'address line 2': 'Blackpool',
+    name: '333 Chinese Takeaway',
+    outcode: 'FY4',
+    postcode: '3AF',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b57'),
+    URL: 'http://www.just-eat.co.uk/restaurants-333Chinese-G13/menu',
+    address: '1550 Great Western Road',
+    'address line 2': 'Glasgow',
+    name: '333 Chinese Takeaway',
+    outcode: 'G13',
+    postcode: '1HJ',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b58'),
+    URL: 'http://www.just-eat.co.uk/restaurants-333Chinese-M11/menu',
+    address: '1276 Ashton Old Road',
+    'address line 2': 'Manchester',
+    name: '333 Chinese Takeaway1',
+    outcode: 'M11',
+    postcode: '1JJ',
+    rating: 4.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b59'),
+    URL: 'http://www.just-eat.co.uk/restaurants-350wok-ws10/menu',
+    address: '136A Crankhall Lane',
+    'address line 2': 'Wednesbury',
+    name: '350 Wok',
+    outcode: 'WS10',
+    postcode: '0ED',
+    rating: 5.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b5a'),
+    URL: 'http://www.just-eat.co.uk/restaurants-350wok-ws10/menu',
+    address: '136A Crankhall Lane',
+    'address line 2': 'Wednesbury',
+    name: '350 Wok',
+    outcode: 'WS10',
+    postcode: '0ED',
+    rating: 5.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b5b'),
+    URL: 'http://www.just-eat.co.uk/restaurants-350wok-ws10/menu',
+    address: '136A Crankhall Lane',
+    'address line 2': 'Wednesbury',
+    name: '350 Wok',
+    outcode: 'WS10',
+    postcode: '0ED',
+    rating: 5.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b5d'),
+    URL: 'http://www.just-eat.co.uk/restaurants-4inlove-pe30/menu',
+    address: '10-12 Railway Road',
+    'address line 2': 'Norfolk',
+    name: '4 in Love',
+    outcode: 'PE30',
+    postcode: '1NE',
+    rating: 5.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b63'),
+    URL: 'http://www.just-eat.co.uk/restaurants-5-star-chinese-archway/menu',
+    address: '362 Hornsey Road',
+    'address line 2': 'London',
+    name: '5 Star Chinese',
+    outcode: 'N19',
+    postcode: '4HD',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b64'),
+    URL: 'http://www.just-eat.co.uk/restaurants-5-star-chinese-archway/menu',
+    address: '362 Hornsey Road',
+    'address line 2': 'London',
+    name: '5 Star Chinese',
+    outcode: 'N19',
+    postcode: '4HD',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b72'),
+    URL: 'http://www.just-eat.co.uk/restaurants-57-orient-takeawayPR8/menu',
+    address: '81 Upper Aughton Road',
+    'address line 2': 'Southport',
+    name: '57 Orient Takeaway',
+    outcode: 'PR8',
+    postcode: '5ND',
+    rating: 4.5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b75'),
+    URL: 'http://www.just-eat.co.uk/restaurants-7andone-bt53/menu',
+    address: '3 Charles Street',
+    'address line 2': 'County Antrim',
+    name: '7 & One',
+    outcode: 'BT53',
+    postcode: '6DX',
+    rating: 5.5,
+    type_of_food: 'Chinese'
+  }
+]
+Type "it" for more
+restaurant> db.restaurant.find({type_of_food:"Chinese"},{name:1,rating:1})
+[
+  {
+    _id: ObjectId('55f14312c7447c3da7051b26'),
+    name: '.CN Chinese',
+    rating: 5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b2f'),
+    name: '1 2 3 Chinese',
+    rating: 4.5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b30'),
+    name: '1 2 3 Chinese',
+    rating: 4.5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b31'),
+    name: '100 Degrees Chinese Restaurant',
+    rating: 5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b32'),
+    name: '100 Menu',
+    rating: 5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b35'),
+    name: '113 Fish Bar',
+    rating: 5.5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b38'),
+    name: '168 Chinese & Cantonese Takeaway',
+    rating: 5.5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b39'),
+    name: '1A Wok',
+    rating: 5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b55'),
+    name: '328 Chinese Online',
+    rating: 5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b56'),
+    name: '333 Chinese Takeaway',
+    rating: 5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b57'),
+    name: '333 Chinese Takeaway',
+    rating: 5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b58'),
+    name: '333 Chinese Takeaway1',
+    rating: 4.5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b59'),
+    name: '350 Wok',
+    rating: 5.5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b5a'),
+    name: '350 Wok',
+    rating: 5.5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b5b'),
+    name: '350 Wok',
+    rating: 5.5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b5d'),
+    name: '4 in Love',
+    rating: 5.5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b63'),
+    name: '5 Star Chinese',
+    rating: 5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b64'),
+    name: '5 Star Chinese',
+    rating: 5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b72'),
+    name: '57 Orient Takeaway',
+    rating: 4.5
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b75'),
+    name: '7 & One',
+    rating: 5.5
+  }
+]
+Type "it" for more
+restaurant> //find restaurants outcode"W6",name,rating and type of food
+
+restaurant> db.restaurant.find({outcode:"W6"},{name:1,rating:1,type_of_food:1})
+[
+  {
+    _id: ObjectId('55f14312c7447c3da7051b28'),
+    name: '@ Thai Restaurant',
+    rating: 4.5,
+    type_of_food: 'Thai'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051b29'),
+    name: '@ Thai Restaurant',
+    rating: 4.5,
+    type_of_food: 'Thai'
+  },
+  {
+    _id: ObjectId('55f14313c7447c3da7052096'),
+    name: 'Azerbaijan Restaurant',
+    rating: 5,
+    type_of_food: 'Azerbaijan'
+  },
+  {
+    _id: ObjectId('55f14313c7447c3da7052097'),
+    name: 'Azerbaijan Restaurant',
+    rating: 5,
+    type_of_food: 'Azerbaijan'
+  }
+]
+restaurant> //Find restaurants with poscode "3JH"
+
+restaurant> db.restaurant.find({},{postcode:"3JH"})
+[
+  { _id: ObjectId('55f14312c7447c3da7051b26'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b27'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b28'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b29'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b2a'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b2b'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b2c'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b2d'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b2e'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b2f'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b30'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b31'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b32'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b33'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b34'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b35'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b36'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b37'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b38'), postcode: '3JH' },
+  { _id: ObjectId('55f14312c7447c3da7051b39'), postcode: '3JH' }
+]
+Type "it" for more
+restaurant>  db.restaurant.find({postcode:"3JH"})
+[
+  {
+    _id: ObjectId('55f14312c7447c3da7051b26'),
+    URL: 'http://www.just-eat.co.uk/restaurants-cn-chinese-cardiff/menu',
+    address: '228 City Road',
+    'address line 2': 'Cardiff',
+    name: '.CN Chinese',
+    outcode: 'CF24',
+    postcode: '3JH',
+    rating: 5,
+    type_of_food: 'Chinese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051bf5'),
+    URL: 'http://www.just-eat.co.uk/restaurants-aboali-cf24/menu',
+    address: '224 City Road',
+    'address line 2': 'Cardiff',
+    name: 'Abo Ali - Lebanese Cuisine',
+    outcode: 'CF24',
+    postcode: '3JH',
+    rating: 5,
+    type_of_food: 'Lebanese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051bf6'),
+    URL: 'http://www.just-eat.co.uk/restaurants-aboali-cf24/menu',
+    address: '224 City Road',
+    'address line 2': 'Cardiff',
+    name: 'Abo Ali - Lebanese Cuisine',
+    outcode: 'CF24',
+    postcode: '3JH',
+    rating: 5,
+    type_of_food: 'Lebanese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051d19'),
+    URL: 'http://www.just-eat.co.uk/restaurants-aladdin-cf24/menu',
+    address: '218 City Road',
+    'address line 2': 'Cardiff',
+    name: 'Aladdin',
+    outcode: 'CF24',
+    postcode: '3JH',
+    rating: 3.5,
+    type_of_food: 'Lebanese'
+  },
+  {
+    _id: ObjectId('55f14312c7447c3da7051d1a'),
+    URL: 'http://www.just-eat.co.uk/restaurants-aladdin-cf24/menu',
+    address: '218 City Road',
+    'address line 2': 'Cardiff',
+    name: 'Aladdin',
+    outcode: 'CF24',
+    postcode: '3JH',
+    rating: 3.5,
+    type_of_food: 'Lebanese'
+  },
+  {
+    _id: ObjectId('55f14313c7447c3da70520b8'),
+    URL: 'http://www.just-eat.co.uk/restaurants-b26foodofindia-b26/menu',
+    address: '2226 - 2228 Coventry Road',
+    'address line 2': 'Birmingham',
+    name: 'B26 Food Of India',
+    outcode: 'B26',
+    postcode: '3JH',
+    rating: 5.5,
+    type_of_food: 'Curry'
+  },
+  {
+    _id: ObjectId('55f14313c7447c3da7052120'),
+    URL: 'http://www.just-eat.co.uk/restaurants-balticurriestr11/menu',
+    address: '47 Arwenack Street',
+    'address line 2': 'Falmouth',
+    name: 'Balti Curries',
+    outcode: 'TR11',
+    postcode: '3JH',
+    rating: 4.5,
+    type_of_food: 'Curry'
+  }
+]
+restaurant>  db.restaurant.find({postcode:"3JH"})"
+Uncaught:
+SyntaxError: Unterminated string constant. (1:37)
+
+> 1 |  db.restaurant.find({postcode:"3JH"})"
+    |                                      ^
+  2 |
+
+restaurant>  db.restaurant.find({postcode:"3JH"})"
+...  db.restaurant.find({postcode:"3JH"})
