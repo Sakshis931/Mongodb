@@ -1,0 +1,283 @@
+Last login: Sat May 17 12:47:11 on ttys000
+/Users/sakshisingh/Desktop/mongodb\ folder/mongosh-2.5.1-darwin-arm64/bin/mongosh ; exit;                                                                                                                 
+(base) sakshisingh@Sakshis-MacBook-Air ~ % /Users/sakshisingh/Desktop/mongodb\ folder/mongosh-2.5.1-darwin-arm64/bin/mongosh ; exit;
+Current Mongosh Log ID:	68285c7d3a563474deed7c9d
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.1
+Using MongoDB:		8.0.9
+Using Mongosh:		2.5.1
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2025-05-14T11:13:51.477+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2025-05-14T11:13:51.477+05:30: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+   2025-05-14T11:13:51.477+05:30: Soft rlimits for open file descriptors too low
+------
+
+test> db
+test
+test> show dbs
+admin        40.00 KiB
+config      108.00 KiB
+grades       56.00 KiB
+local        40.00 KiB
+restaurant  440.00 KiB
+students     48.00 KiB
+test> db grades
+Uncaught:
+SyntaxError: Missing semicolon. (1:2)
+
+> 1 | db grades
+    |   ^
+  2 |
+
+test> db.grades
+test.grades
+test> use grades
+switched to db grades
+grades> db grades
+Uncaught:
+SyntaxError: Missing semicolon. (1:2)
+
+> 1 | db grades
+    |   ^
+  2 |
+
+grades> db.grades.find()
+[
+  {
+    _id: ObjectId('50b59cd75bed76f46522c34e'),
+    student_id: 0,
+    class_id: 2,
+    scores: [
+      { type: 'exam', score: 57.92947112575566 },
+      { type: 'quiz', score: 21.24542588206755 },
+      { type: 'homework', score: 68.1956781058743 },
+      { type: 'homework', score: 67.95019716560351 },
+      { type: 'homework', score: 18.81037253352722 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c34f'),
+    student_id: 0,
+    class_id: 28,
+    scores: [
+      { type: 'exam', score: 39.17749400402234 },
+      { type: 'quiz', score: 78.44172815491468 },
+      { type: 'homework', score: 20.81782269075502 },
+      { type: 'homework', score: 70.44520452408949 },
+      { type: 'homework', score: 50.66616327819226 },
+      { type: 'homework', score: 53.84983118363991 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c350'),
+    student_id: 0,
+    class_id: 5,
+    scores: [
+      { type: 'exam', score: 88.22950674232497 },
+      { type: 'quiz', score: 79.28962650427184 },
+      { type: 'homework', score: 18.66254946562674 },
+      { type: 'homework', score: 40.28154176513361 },
+      { type: 'homework', score: 1.23735944117882 },
+      { type: 'homework', score: 88.96101200683958 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c351'),
+    student_id: 0,
+    class_id: 16,
+    scores: [
+      { type: 'exam', score: 59.1805667559299 },
+      { type: 'quiz', score: 47.58960202938239 },
+      { type: 'homework', score: 6.48470951607214 },
+      { type: 'homework', score: 68.33519637418685 },
+      { type: 'homework', score: 78.53068038180965 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c352'),
+    student_id: 0,
+    class_id: 24,
+    scores: [
+      { type: 'exam', score: 4.444435759027499 },
+      { type: 'quiz', score: 28.63057857803885 },
+      { type: 'homework', score: 86.79352850434199 },
+      { type: 'homework', score: 83.9164548767836 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c353'),
+    student_id: 0,
+    class_id: 30,
+    scores: [
+      { type: 'exam', score: 14.34345947841966 },
+      { type: 'quiz', score: 47.65945482174327 },
+      { type: 'homework', score: 83.42772189120254 },
+      { type: 'homework', score: 49.86812935368258 },
+      { type: 'homework', score: 39.85525554437086 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c354'),
+    student_id: 0,
+    class_id: 7,
+    scores: [
+      { type: 'exam', score: 18.20492211025179 },
+      { type: 'quiz', score: 60.4769945611789 },
+      { type: 'homework', score: 75.62999921143397 },
+      { type: 'homework', score: 72.41228797373115 },
+      { type: 'homework', score: 74.06744381708968 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c355'),
+    student_id: 0,
+    class_id: 6,
+    scores: [
+      { type: 'exam', score: 56.81981513867912 },
+      { type: 'quiz', score: 15.03004654140545 },
+      { type: 'homework', score: 59.58797547174019 },
+      { type: 'homework', score: 67.42173915928456 },
+      { type: 'homework', score: 71.25502554312342 },
+      { type: 'homework', score: 94.46662737566072 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c356'),
+    student_id: 0,
+    class_id: 27,
+    scores: [
+      { type: 'exam', score: 60.19473636151568 },
+      { type: 'quiz', score: 64.15966210014162 },
+      { type: 'homework', score: 82.80835343023551 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c357'),
+    student_id: 0,
+    class_id: 11,
+    scores: [
+      { type: 'exam', score: 58.83297411100884 },
+      { type: 'quiz', score: 49.66835710930263 },
+      { type: 'homework', score: 18.05861540807023 },
+      { type: 'homework', score: 80.04086698967356 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c358'),
+    student_id: 0,
+    class_id: 10,
+    scores: [
+      { type: 'exam', score: 30.93065784731665 },
+      { type: 'quiz', score: 55.98003281528393 },
+      { type: 'homework', score: 55.6752702814148 },
+      { type: 'homework', score: 63.15391302252755 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c359'),
+    student_id: 1,
+    class_id: 18,
+    scores: [
+      { type: 'exam', score: 63.09737877102438 },
+      { type: 'quiz', score: 69.08175868397933 },
+      { type: 'homework', score: 34.6879008789745 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c35a'),
+    student_id: 1,
+    class_id: 22,
+    scores: [
+      { type: 'exam', score: 47.38775906993299 },
+      { type: 'quiz', score: 9.963742963372834 },
+      { type: 'homework', score: 22.17993073237026 },
+      { type: 'homework', score: 33.7647119689925 },
+      { type: 'homework', score: 18.29543263797219 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c35b'),
+    student_id: 1,
+    class_id: 28,
+    scores: [
+      { type: 'exam', score: 24.05118737353409 },
+      { type: 'quiz', score: 77.89233366199049 },
+      { type: 'homework', score: 68.81640554493546 },
+      { type: 'homework', score: 87.88279757549473 },
+      { type: 'homework', score: 83.36858109902629 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c35c'),
+    student_id: 1,
+    class_id: 16,
+    scores: [
+      { type: 'exam', score: 80.6212442791788 },
+      { type: 'quiz', score: 40.64514700062569 },
+      { type: 'homework', score: 91.50521146788955 },
+      { type: 'homework', score: 82.1425639828968 },
+      { type: 'homework', score: 16.64633943981927 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c35d'),
+    student_id: 1,
+    class_id: 13,
+    scores: [
+      { type: 'exam', score: 68.93370297588363 },
+      { type: 'quiz', score: 65.39942932033274 },
+      { type: 'homework', score: 43.10650652263911 },
+      { type: 'homework', score: 56.89478543605922 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c35e'),
+    student_id: 2,
+    class_id: 25,
+    scores: [
+      { type: 'exam', score: 5.231166018738698 },
+      { type: 'quiz', score: 9.922444955766851 },
+      { type: 'homework', score: 76.7208591903267 },
+      { type: 'homework', score: 41.14461420390943 },
+      { type: 'homework', score: 30.18199391733215 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c35f'),
+    student_id: 2,
+    class_id: 27,
+    scores: [
+      { type: 'exam', score: 70.32953992025745 },
+      { type: 'quiz', score: 66.24220071248318 },
+      { type: 'homework', score: 79.21965885764142 },
+      { type: 'homework', score: 78.68052791237751 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c360'),
+    student_id: 2,
+    class_id: 24,
+    scores: [
+      { type: 'exam', score: 76.01876674517686 },
+      { type: 'quiz', score: 47.44729578274631 },
+      { type: 'homework', score: 4.735101893467009 },
+      { type: 'homework', score: 92.65331076863312 }
+    ]
+  },
+  {
+    _id: ObjectId('50b59cd75bed76f46522c361'),
+    student_id: 3,
+    class_id: 10,
+    scores: [
+      { type: 'exam', score: 35.47946463550763 },
+      { type: 'quiz', score: 94.14222652833352 },
+      { type: 'homework', score: 58.43343860077279 },
+      { type: 'homework', score: 66.83562834109681 }
+    ]
+  }
+]
+Type "it" for more
+grades> 
