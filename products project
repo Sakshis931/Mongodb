@@ -1,0 +1,951 @@
+Last login: Sat May 17 15:22:44 on ttys000
+/Users/sakshisingh/Desktop/mongodb\ folder/mongosh-2.5.1-darwin-arm64/bin/mongosh ; exit;                                                                                                                 
+(base) sakshisingh@Sakshis-MacBook-Air ~ % /Users/sakshisingh/Desktop/mongodb\ folder/mongosh-2.5.1-darwin-arm64/bin/mongosh ; exit;
+Current Mongosh Log ID:	68285dc3aac4a56b7eed7c9d
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.1
+Using MongoDB:		8.0.9
+Using Mongosh:		2.5.1
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2025-05-14T11:13:51.477+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2025-05-14T11:13:51.477+05:30: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+   2025-05-14T11:13:51.477+05:30: Soft rlimits for open file descriptors too low
+------
+
+test> db
+test
+test> show dbs
+admin        40.00 KiB
+config      108.00 KiB
+grades       56.00 KiB
+local        40.00 KiB
+products     40.00 KiB
+restaurant  440.00 KiB
+students     48.00 KiB
+test> use products
+switched to db products
+products> db.products.find()
+[
+  {
+    _id: 'ac3',
+    name: 'AC3 Phone',
+    brand: 'ACME',
+    type: 'phone',
+    price: 200,
+    rating: 3.8,
+    warranty_years: 1,
+    available: true
+  },
+  {
+    _id: 'ac7',
+    name: 'AC7 Phone',
+    brand: 'ACME',
+    type: 'phone',
+    price: 320,
+    rating: 4,
+    warranty_years: 1,
+    available: false
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bf9'),
+    name: 'AC3 Series Charger',
+    type: [ 'accessory', 'charger' ],
+    price: 19,
+    rating: 2.8,
+    warranty_years: 0.25,
+    for: [ 'ac3', 'ac7', 'ac9' ]
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfa'),
+    name: 'AC3 Case Green',
+    type: [ 'accessory', 'case' ],
+    color: 'green',
+    price: 12,
+    rating: 1,
+    warranty_years: 0
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfb'),
+    name: 'Phone Extended Warranty',
+    type: 'warranty',
+    price: 38,
+    rating: 5,
+    warranty_years: 2,
+    for: [ 'ac3', 'ac7', 'ac9', 'qp7', 'qp8', 'qp9' ]
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfc'),
+    name: 'AC3 Case Black',
+    type: [ 'accessory', 'case' ],
+    color: 'black',
+    price: 12.5,
+    rating: 2,
+    warranty_years: 0.25,
+    available: false,
+    for: 'ac3'
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfd'),
+    name: 'AC3 Case Red',
+    type: [ 'accessory', 'case' ],
+    color: 'red',
+    price: 12,
+    rating: 4,
+    warranty_years: 0.25,
+    available: true,
+    for: 'ac3'
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfe'),
+    name: 'Phone Service Basic Plan',
+    type: 'service',
+    monthly_price: 40,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 400, over_rate: 0.05 },
+      data: { units: 'gigabytes', n: 20, over_rate: 1 },
+      sms: { units: 'texts sent', n: 100, over_rate: 0.001 }
+    },
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bff'),
+    name: 'Phone Service Core Plan',
+    type: 'service',
+    monthly_price: 60,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 1000, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    term_years: 1
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c00'),
+    name: 'Phone Service Family Plan',
+    type: 'service',
+    monthly_price: 90,
+    rating: 4,
+    limits: {
+      voice: { units: 'minutes', n: 1200, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    sales_tax: true,
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c01'),
+    name: 'Cable TV Basic Service Package',
+    type: 'tv',
+    monthly_price: 50,
+    rating: 3.9,
+    term_years: 2,
+    cancel_penalty: 25,
+    sales_tax: true,
+    additional_tarriffs: [
+      { kind: 'federal tarriff', amount: { percent_of_service: 0.06 } },
+      { kind: 'misc tarriff', amount: 2.25 }
+    ]
+  }
+]
+products> db.products.find({},{type:"tv"})
+[
+  { _id: 'ac3', type: 'tv' },
+  { _id: 'ac7', type: 'tv' },
+  { _id: ObjectId('507d95d5719dbef170f15bf9'), type: 'tv' },
+  { _id: ObjectId('507d95d5719dbef170f15bfa'), type: 'tv' },
+  { _id: ObjectId('507d95d5719dbef170f15bfb'), type: 'tv' },
+  { _id: ObjectId('507d95d5719dbef170f15bfc'), type: 'tv' },
+  { _id: ObjectId('507d95d5719dbef170f15bfd'), type: 'tv' },
+  { _id: ObjectId('507d95d5719dbef170f15bfe'), type: 'tv' },
+  { _id: ObjectId('507d95d5719dbef170f15bff'), type: 'tv' },
+  { _id: ObjectId('507d95d5719dbef170f15c00'), type: 'tv' },
+  { _id: ObjectId('507d95d5719dbef170f15c01'), type: 'tv' }
+]
+products>  db.products.find({montly_price>30})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:31)
+
+> 1 |  db.products.find({montly_price>30})
+    |                                ^
+  2 |
+
+products> db.products.find({montly_price:>30})
+Uncaught:
+SyntaxError: Unexpected token (1:31)
+
+> 1 | db.products.find({montly_price:>30})
+    |                                ^
+  2 |
+
+products> db.products.find({montly_price:{$gt:30})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:39)
+
+> 1 | db.products.find({montly_price:{$gt:30})
+    |                                        ^
+  2 |
+
+products> db.products.find({montly_price:{$gt:30}})
+
+products> db.products.find({monthly_price:{$gt:30}})
+[
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfe'),
+    name: 'Phone Service Basic Plan',
+    type: 'service',
+    monthly_price: 40,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 400, over_rate: 0.05 },
+      data: { units: 'gigabytes', n: 20, over_rate: 1 },
+      sms: { units: 'texts sent', n: 100, over_rate: 0.001 }
+    },
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bff'),
+    name: 'Phone Service Core Plan',
+    type: 'service',
+    monthly_price: 60,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 1000, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    term_years: 1
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c00'),
+    name: 'Phone Service Family Plan',
+    type: 'service',
+    monthly_price: 90,
+    rating: 4,
+    limits: {
+      voice: { units: 'minutes', n: 1200, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    sales_tax: true,
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c01'),
+    name: 'Cable TV Basic Service Package',
+    type: 'tv',
+    monthly_price: 50,
+    rating: 3.9,
+    term_years: 2,
+    cancel_penalty: 25,
+    sales_tax: true,
+    additional_tarriffs: [
+      { kind: 'federal tarriff', amount: { percent_of_service: 0.06 } },
+      { kind: 'misc tarriff', amount: 2.25 }
+    ]
+  }
+]
+products> db.products.find({montly_price:{$lt:30}})
+
+products> db.products.find({montly_price:{$gt:30}})
+
+products> db.products.find({montly_price:{$lt:30}})
+
+products> db.products.find({montly_price:{$lt:50}})
+
+products> db.products.find({monthly_price:{$lt:50}})
+[
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfe'),
+    name: 'Phone Service Basic Plan',
+    type: 'service',
+    monthly_price: 40,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 400, over_rate: 0.05 },
+      data: { units: 'gigabytes', n: 20, over_rate: 1 },
+      sms: { units: 'texts sent', n: 100, over_rate: 0.001 }
+    },
+    term_years: 2
+  }
+]
+products> db.products.find({monthly_price:{$net:50}})
+MongoServerError[BadValue]: unknown operator: $net
+products> db.products.find({monthly_price:{$ne:50}})
+[
+  {
+    _id: 'ac3',
+    name: 'AC3 Phone',
+    brand: 'ACME',
+    type: 'phone',
+    price: 200,
+    rating: 3.8,
+    warranty_years: 1,
+    available: true
+  },
+  {
+    _id: 'ac7',
+    name: 'AC7 Phone',
+    brand: 'ACME',
+    type: 'phone',
+    price: 320,
+    rating: 4,
+    warranty_years: 1,
+    available: false
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bf9'),
+    name: 'AC3 Series Charger',
+    type: [ 'accessory', 'charger' ],
+    price: 19,
+    rating: 2.8,
+    warranty_years: 0.25,
+    for: [ 'ac3', 'ac7', 'ac9' ]
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfa'),
+    name: 'AC3 Case Green',
+    type: [ 'accessory', 'case' ],
+    color: 'green',
+    price: 12,
+    rating: 1,
+    warranty_years: 0
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfb'),
+    name: 'Phone Extended Warranty',
+    type: 'warranty',
+    price: 38,
+    rating: 5,
+    warranty_years: 2,
+    for: [ 'ac3', 'ac7', 'ac9', 'qp7', 'qp8', 'qp9' ]
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfc'),
+    name: 'AC3 Case Black',
+    type: [ 'accessory', 'case' ],
+    color: 'black',
+    price: 12.5,
+    rating: 2,
+    warranty_years: 0.25,
+    available: false,
+    for: 'ac3'
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfd'),
+    name: 'AC3 Case Red',
+    type: [ 'accessory', 'case' ],
+    color: 'red',
+    price: 12,
+    rating: 4,
+    warranty_years: 0.25,
+    available: true,
+    for: 'ac3'
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfe'),
+    name: 'Phone Service Basic Plan',
+    type: 'service',
+    monthly_price: 40,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 400, over_rate: 0.05 },
+      data: { units: 'gigabytes', n: 20, over_rate: 1 },
+      sms: { units: 'texts sent', n: 100, over_rate: 0.001 }
+    },
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bff'),
+    name: 'Phone Service Core Plan',
+    type: 'service',
+    monthly_price: 60,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 1000, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    term_years: 1
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c00'),
+    name: 'Phone Service Family Plan',
+    type: 'service',
+    monthly_price: 90,
+    rating: 4,
+    limits: {
+      voice: { units: 'minutes', n: 1200, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    sales_tax: true,
+    term_years: 2
+  }
+]
+products> db.products.find({monthly_price:{$ne:50}})
+[
+  {
+    _id: 'ac3',
+    name: 'AC3 Phone',
+    brand: 'ACME',
+    type: 'phone',
+    price: 200,
+    rating: 3.8,
+    warranty_years: 1,
+    available: true
+  },
+  {
+    _id: 'ac7',
+    name: 'AC7 Phone',
+    brand: 'ACME',
+    type: 'phone',
+    price: 320,
+    rating: 4,
+    warranty_years: 1,
+    available: false
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bf9'),
+    name: 'AC3 Series Charger',
+    type: [ 'accessory', 'charger' ],
+    price: 19,
+    rating: 2.8,
+    warranty_years: 0.25,
+    for: [ 'ac3', 'ac7', 'ac9' ]
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfa'),
+    name: 'AC3 Case Green',
+    type: [ 'accessory', 'case' ],
+    color: 'green',
+    price: 12,
+    rating: 1,
+    warranty_years: 0
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfb'),
+    name: 'Phone Extended Warranty',
+    type: 'warranty',
+    price: 38,
+    rating: 5,
+    warranty_years: 2,
+    for: [ 'ac3', 'ac7', 'ac9', 'qp7', 'qp8', 'qp9' ]
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfc'),
+    name: 'AC3 Case Black',
+    type: [ 'accessory', 'case' ],
+    color: 'black',
+    price: 12.5,
+    rating: 2,
+    warranty_years: 0.25,
+    available: false,
+    for: 'ac3'
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfd'),
+    name: 'AC3 Case Red',
+    type: [ 'accessory', 'case' ],
+    color: 'red',
+    price: 12,
+    rating: 4,
+    warranty_years: 0.25,
+    available: true,
+    for: 'ac3'
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfe'),
+    name: 'Phone Service Basic Plan',
+    type: 'service',
+    monthly_price: 40,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 400, over_rate: 0.05 },
+      data: { units: 'gigabytes', n: 20, over_rate: 1 },
+      sms: { units: 'texts sent', n: 100, over_rate: 0.001 }
+    },
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bff'),
+    name: 'Phone Service Core Plan',
+    type: 'service',
+    monthly_price: 60,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 1000, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    term_years: 1
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c00'),
+    name: 'Phone Service Family Plan',
+    type: 'service',
+    monthly_price: 90,
+    rating: 4,
+    limits: {
+      voice: { units: 'minutes', n: 1200, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    sales_tax: true,
+    term_years: 2
+  }
+]
+products> db.products.find({rating:{$gt:3}})
+[
+  {
+    _id: 'ac3',
+    name: 'AC3 Phone',
+    brand: 'ACME',
+    type: 'phone',
+    price: 200,
+    rating: 3.8,
+    warranty_years: 1,
+    available: true
+  },
+  {
+    _id: 'ac7',
+    name: 'AC7 Phone',
+    brand: 'ACME',
+    type: 'phone',
+    price: 320,
+    rating: 4,
+    warranty_years: 1,
+    available: false
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfb'),
+    name: 'Phone Extended Warranty',
+    type: 'warranty',
+    price: 38,
+    rating: 5,
+    warranty_years: 2,
+    for: [ 'ac3', 'ac7', 'ac9', 'qp7', 'qp8', 'qp9' ]
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfd'),
+    name: 'AC3 Case Red',
+    type: [ 'accessory', 'case' ],
+    color: 'red',
+    price: 12,
+    rating: 4,
+    warranty_years: 0.25,
+    available: true,
+    for: 'ac3'
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c00'),
+    name: 'Phone Service Family Plan',
+    type: 'service',
+    monthly_price: 90,
+    rating: 4,
+    limits: {
+      voice: { units: 'minutes', n: 1200, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    sales_tax: true,
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c01'),
+    name: 'Cable TV Basic Service Package',
+    type: 'tv',
+    monthly_price: 50,
+    rating: 3.9,
+    term_years: 2,
+    cancel_penalty: 25,
+    sales_tax: true,
+    additional_tarriffs: [
+      { kind: 'federal tarriff', amount: { percent_of_service: 0.06 } },
+      { kind: 'misc tarriff', amount: 2.25 }
+    ]
+  }
+]
+products> db.products.find({type:1})
+
+products> db.products.find({name:1})
+
+products> db.products.find()
+[
+  {
+    _id: 'ac3',
+    name: 'AC3 Phone',
+    brand: 'ACME',
+    type: 'phone',
+    price: 200,
+    rating: 3.8,
+    warranty_years: 1,
+    available: true
+  },
+  {
+    _id: 'ac7',
+    name: 'AC7 Phone',
+    brand: 'ACME',
+    type: 'phone',
+    price: 320,
+    rating: 4,
+    warranty_years: 1,
+    available: false
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bf9'),
+    name: 'AC3 Series Charger',
+    type: [ 'accessory', 'charger' ],
+    price: 19,
+    rating: 2.8,
+    warranty_years: 0.25,
+    for: [ 'ac3', 'ac7', 'ac9' ]
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfa'),
+    name: 'AC3 Case Green',
+    type: [ 'accessory', 'case' ],
+    color: 'green',
+    price: 12,
+    rating: 1,
+    warranty_years: 0
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfb'),
+    name: 'Phone Extended Warranty',
+    type: 'warranty',
+    price: 38,
+    rating: 5,
+    warranty_years: 2,
+    for: [ 'ac3', 'ac7', 'ac9', 'qp7', 'qp8', 'qp9' ]
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfc'),
+    name: 'AC3 Case Black',
+    type: [ 'accessory', 'case' ],
+    color: 'black',
+    price: 12.5,
+    rating: 2,
+    warranty_years: 0.25,
+    available: false,
+    for: 'ac3'
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfd'),
+    name: 'AC3 Case Red',
+    type: [ 'accessory', 'case' ],
+    color: 'red',
+    price: 12,
+    rating: 4,
+    warranty_years: 0.25,
+    available: true,
+    for: 'ac3'
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfe'),
+    name: 'Phone Service Basic Plan',
+    type: 'service',
+    monthly_price: 40,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 400, over_rate: 0.05 },
+      data: { units: 'gigabytes', n: 20, over_rate: 1 },
+      sms: { units: 'texts sent', n: 100, over_rate: 0.001 }
+    },
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bff'),
+    name: 'Phone Service Core Plan',
+    type: 'service',
+    monthly_price: 60,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 1000, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    term_years: 1
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c00'),
+    name: 'Phone Service Family Plan',
+    type: 'service',
+    monthly_price: 90,
+    rating: 4,
+    limits: {
+      voice: { units: 'minutes', n: 1200, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    sales_tax: true,
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c01'),
+    name: 'Cable TV Basic Service Package',
+    type: 'tv',
+    monthly_price: 50,
+    rating: 3.9,
+    term_years: 2,
+    cancel_penalty: 25,
+    sales_tax: true,
+    additional_tarriffs: [
+      { kind: 'federal tarriff', amount: { percent_of_service: 0.06 } },
+      { kind: 'misc tarriff', amount: 2.25 }
+    ]
+  }
+]
+products> db.products.find({name:1})
+
+products> db.products.find({type:"service"})
+[
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfe'),
+    name: 'Phone Service Basic Plan',
+    type: 'service',
+    monthly_price: 40,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 400, over_rate: 0.05 },
+      data: { units: 'gigabytes', n: 20, over_rate: 1 },
+      sms: { units: 'texts sent', n: 100, over_rate: 0.001 }
+    },
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bff'),
+    name: 'Phone Service Core Plan',
+    type: 'service',
+    monthly_price: 60,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 1000, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    term_years: 1
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c00'),
+    name: 'Phone Service Family Plan',
+    type: 'service',
+    monthly_price: 90,
+    rating: 4,
+    limits: {
+      voice: { units: 'minutes', n: 1200, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    sales_tax: true,
+    term_years: 2
+  }
+]
+products> db.products.find({term_years:4})
+
+products> db.products.find({term_years:2})
+[
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfe'),
+    name: 'Phone Service Basic Plan',
+    type: 'service',
+    monthly_price: 40,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 400, over_rate: 0.05 },
+      data: { units: 'gigabytes', n: 20, over_rate: 1 },
+      sms: { units: 'texts sent', n: 100, over_rate: 0.001 }
+    },
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c00'),
+    name: 'Phone Service Family Plan',
+    type: 'service',
+    monthly_price: 90,
+    rating: 4,
+    limits: {
+      voice: { units: 'minutes', n: 1200, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    sales_tax: true,
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c01'),
+    name: 'Cable TV Basic Service Package',
+    type: 'tv',
+    monthly_price: 50,
+    rating: 3.9,
+    term_years: 2,
+    cancel_penalty: 25,
+    sales_tax: true,
+    additional_tarriffs: [
+      { kind: 'federal tarriff', amount: { percent_of_service: 0.06 } },
+      { kind: 'misc tarriff', amount: 2.25 }
+    ]
+  }
+]
+products> db.products.find({rating:{$gt:32})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:33)
+
+> 1 | db.products.find({rating:{$gt:32})
+    |                                  ^
+  2 |
+
+products> db.products.find({rating:{$gt:2})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:32)
+
+> 1 | db.products.find({rating:{$gt:2})
+    |                                 ^
+  2 |
+
+products> db.products.find({rating:{$gt:2}})
+[
+  {
+    _id: 'ac3',
+    name: 'AC3 Phone',
+    brand: 'ACME',
+    type: 'phone',
+    price: 200,
+    rating: 3.8,
+    warranty_years: 1,
+    available: true
+  },
+  {
+    _id: 'ac7',
+    name: 'AC7 Phone',
+    brand: 'ACME',
+    type: 'phone',
+    price: 320,
+    rating: 4,
+    warranty_years: 1,
+    available: false
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bf9'),
+    name: 'AC3 Series Charger',
+    type: [ 'accessory', 'charger' ],
+    price: 19,
+    rating: 2.8,
+    warranty_years: 0.25,
+    for: [ 'ac3', 'ac7', 'ac9' ]
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfb'),
+    name: 'Phone Extended Warranty',
+    type: 'warranty',
+    price: 38,
+    rating: 5,
+    warranty_years: 2,
+    for: [ 'ac3', 'ac7', 'ac9', 'qp7', 'qp8', 'qp9' ]
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfd'),
+    name: 'AC3 Case Red',
+    type: [ 'accessory', 'case' ],
+    color: 'red',
+    price: 12,
+    rating: 4,
+    warranty_years: 0.25,
+    available: true,
+    for: 'ac3'
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfe'),
+    name: 'Phone Service Basic Plan',
+    type: 'service',
+    monthly_price: 40,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 400, over_rate: 0.05 },
+      data: { units: 'gigabytes', n: 20, over_rate: 1 },
+      sms: { units: 'texts sent', n: 100, over_rate: 0.001 }
+    },
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15bff'),
+    name: 'Phone Service Core Plan',
+    type: 'service',
+    monthly_price: 60,
+    rating: 3,
+    limits: {
+      voice: { units: 'minutes', n: 1000, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    term_years: 1
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c00'),
+    name: 'Phone Service Family Plan',
+    type: 'service',
+    monthly_price: 90,
+    rating: 4,
+    limits: {
+      voice: { units: 'minutes', n: 1200, over_rate: 0.05 },
+      data: { n: 'unlimited', over_rate: 0 },
+      sms: { n: 'unlimited', over_rate: 0 }
+    },
+    sales_tax: true,
+    term_years: 2
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c01'),
+    name: 'Cable TV Basic Service Package',
+    type: 'tv',
+    monthly_price: 50,
+    rating: 3.9,
+    term_years: 2,
+    cancel_penalty: 25,
+    sales_tax: true,
+    additional_tarriffs: [
+      { kind: 'federal tarriff', amount: { percent_of_service: 0.06 } },
+      { kind: 'misc tarriff', amount: 2.25 }
+    ]
+  }
+]
+products> db.products.find({$or:[{rating:5},{type:"tv"'}]})
+Uncaught:
+SyntaxError: Unterminated string constant. (1:44)
+
+> 1 | db.products.find({$or:[{rating:5},{type:"tv"'}]})
+    |                                             ^
+  2 |
+
+products> db.products.find({$or:[{rating:5},{type:"tv"}]})
+[
+  {
+    _id: ObjectId('507d95d5719dbef170f15bfb'),
+    name: 'Phone Extended Warranty',
+    type: 'warranty',
+    price: 38,
+    rating: 5,
+    warranty_years: 2,
+    for: [ 'ac3', 'ac7', 'ac9', 'qp7', 'qp8', 'qp9' ]
+  },
+  {
+    _id: ObjectId('507d95d5719dbef170f15c01'),
+    name: 'Cable TV Basic Service Package',
+    type: 'tv',
+    monthly_price: 50,
+    rating: 3.9,
+    term_years: 2,
+    cancel_penalty: 25,
+    sales_tax: true,
+    additional_tarriffs: [
+      { kind: 'federal tarriff', amount: { percent_of_service: 0.06 } },
+      { kind: 'misc tarriff', amount: 2.25 }
+    ]
+  }
+]
+products> 
