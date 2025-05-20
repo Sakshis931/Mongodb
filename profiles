@@ -1,0 +1,2243 @@
+Last login: Tue May 20 09:48:30 on ttys000
+/Users/sakshisingh/Desktop/mongodb\ folder/mongosh-2.5.1-darwin-arm64/bin/mongosh ; exit;
+(base) sakshisingh@Sakshis-MacBook-Air ~ % /Users/sakshisingh/Desktop/mongodb\ folder/mongosh-2.5.1-darwin-arm64/bin/mongosh ; exit;
+Current Mongosh Log ID:	682c63a0c823bd634aed7c9d
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.1
+Using MongoDB:		8.0.9
+Using Mongosh:		2.5.1
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2025-05-14T11:13:51.477+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2025-05-14T11:13:51.477+05:30: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+   2025-05-14T11:13:51.477+05:30: Soft rlimits for open file descriptors too low
+------
+
+test> dbs
+ReferenceError: dbs is not defined
+test> db
+test
+test> use student
+switched to db student
+student> use profiles
+switched to db profiles
+profiles> db profiles 
+Uncaught:
+SyntaxError: Missing semicolon. (1:2)
+
+> 1 | db profiles 
+    |   ^
+  2 |
+
+profiles> db.profiles.find()
+[
+  {
+    _id: ObjectId('552786262cec76ed95fd61cb'),
+    client: '127.0.0.1',
+    command: { drop: 'student_grades' },
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 4 },
+      timeLockedMicros: { r: 0, w: 1481 }
+    },
+    millis: 1,
+    ns: 'school2.$cmd',
+    ntoreturn: 1,
+    numYield: 0,
+    op: 'command',
+    responseLength: 129,
+    ts: ISODate('2012-11-20T20:02:24.386Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61cc'),
+    client: '0.0.0.0',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2, w: 120711 },
+      timeLockedMicros: { r: 58, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.system.indexes',
+    nscanned: 3,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { expireAfterSeconds: { '$exists': true } },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:02:33.060Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61cd'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 5 },
+      timeLockedMicros: { r: 0, w: 5143 }
+    },
+    millis: 5,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.096Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61ce'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 17 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.097Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61cf'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 16 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.097Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d0'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 16 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.097Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d1'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 10600017, w: 143496 },
+      timeLockedMicros: { r: 22760089, w: 0 }
+    },
+    millis: 12560,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 176,
+    op: 'query',
+    query: { student_id: 0 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:02:37.091Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d2'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.098Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d3'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.098Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d4'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 16 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.098Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d5'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.098Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d6'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.098Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d7'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.099Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d8'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 4 },
+      timeLockedMicros: { r: 0, w: 82 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.974Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d9'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1014386, w: 234618 },
+      timeLockedMicros: { r: 7653438, w: 0 }
+    },
+    millis: 6639,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 1,
+    op: 'query',
+    query: { student_id: 1 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:02:43.973Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61da'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 17 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.974Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61db'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.974Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61dc'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 4 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.974Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61dd'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.975Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61de'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 16 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.975Z'),
+    user: ''
+  }
+]
+Type "it" for more
+profiles> db.profiles.find({op:"command"})
+[
+  {
+    _id: ObjectId('552786262cec76ed95fd61cb'),
+    client: '127.0.0.1',
+    command: { drop: 'student_grades' },
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 4 },
+      timeLockedMicros: { r: 0, w: 1481 }
+    },
+    millis: 1,
+    ns: 'school2.$cmd',
+    ntoreturn: 1,
+    numYield: 0,
+    op: 'command',
+    responseLength: 129,
+    ts: ISODate('2012-11-20T20:02:24.386Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6628'),
+    client: '127.0.0.1',
+    command: { drop: 'gpa' },
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 9 },
+      timeLockedMicros: { r: 0, w: 47418 }
+    },
+    millis: 47,
+    ns: 'school2.$cmd',
+    ntoreturn: 1,
+    numYield: 0,
+    op: 'command',
+    responseLength: 118,
+    ts: ISODate('2012-11-20T20:11:25.116Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd66f1'),
+    client: '127.0.0.1',
+    command: { drop: 'class_avg' },
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 4 },
+      timeLockedMicros: { r: 0, w: 16404 }
+    },
+    millis: 16,
+    ns: 'school2.$cmd',
+    ntoreturn: 1,
+    numYield: 0,
+    op: 'command',
+    responseLength: 124,
+    ts: ISODate('2012-11-20T20:11:25.650Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd67af'),
+    client: '127.0.0.1',
+    command: { profile: 0 },
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 4 }
+    },
+    millis: 0,
+    ns: 'school2.$cmd',
+    ntoreturn: 1,
+    numYield: 0,
+    op: 'command',
+    responseLength: 58,
+    ts: ISODate('2012-11-20T20:11:25.741Z'),
+    user: ''
+  }
+]
+profiles> db.profiles.find({ressponseLength:{$gt:50}})
+
+profiles> db.profiles.find({responseLength:{$gt:50}})
+[
+  {
+    _id: ObjectId('552786262cec76ed95fd61cb'),
+    client: '127.0.0.1',
+    command: { drop: 'student_grades' },
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 4 },
+      timeLockedMicros: { r: 0, w: 1481 }
+    },
+    millis: 1,
+    ns: 'school2.$cmd',
+    ntoreturn: 1,
+    numYield: 0,
+    op: 'command',
+    responseLength: 129,
+    ts: ISODate('2012-11-20T20:02:24.386Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d1'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 10600017, w: 143496 },
+      timeLockedMicros: { r: 22760089, w: 0 }
+    },
+    millis: 12560,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 176,
+    op: 'query',
+    query: { student_id: 0 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:02:37.091Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d9'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1014386, w: 234618 },
+      timeLockedMicros: { r: 7653438, w: 0 }
+    },
+    millis: 6639,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 1,
+    op: 'query',
+    query: { student_id: 1 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:02:43.973Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61e4'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 4182244, w: 5 },
+      timeLockedMicros: { r: 13495141, w: 0 }
+    },
+    millis: 9493,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 9,
+    op: 'query',
+    query: { student_id: 2 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:02:53.470Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61e9'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 3301079, w: 4 },
+      timeLockedMicros: { r: 10181319, w: 0 }
+    },
+    millis: 7355,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 5,
+    op: 'query',
+    query: { student_id: 3 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:00.828Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61ff'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 4175194, w: 4 },
+      timeLockedMicros: { r: 8877208, w: 0 }
+    },
+    millis: 4886,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 8,
+    op: 'query',
+    query: { student_id: 5 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:10.848Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6209'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2628184, w: 142 },
+      timeLockedMicros: { r: 7767271, w: 0 }
+    },
+    millis: 6236,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 2,
+    op: 'query',
+    query: { student_id: 6 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:17.088Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6214'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 3064752, w: 232613 },
+      timeLockedMicros: { r: 7295385, w: 0 }
+    },
+    millis: 4232,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 5,
+    op: 'query',
+    query: { student_id: 7 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:21.556Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd621e'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1025017, w: 233161 },
+      timeLockedMicros: { r: 5917050, w: 0 }
+    },
+    millis: 4892,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 3,
+    op: 'query',
+    query: { student_id: 4 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:05.957Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6225'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2133547, w: 4 },
+      timeLockedMicros: { r: 6822411, w: 0 }
+    },
+    millis: 4871,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 3,
+    op: 'query',
+    query: { student_id: 8 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:26.431Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6230'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2040640, w: 230687 },
+      timeLockedMicros: { r: 6155986, w: 0 }
+    },
+    millis: 4115,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 5,
+    op: 'query',
+    query: { student_id: 9 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:30.780Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd623c'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 4548894, w: 4 },
+      timeLockedMicros: { r: 9168619, w: 0 }
+    },
+    millis: 5087,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 55,
+    op: 'query',
+    query: { student_id: 10 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:35.875Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6247'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1020550, w: 231927 },
+      timeLockedMicros: { r: 5392245, w: 0 }
+    },
+    millis: 4371,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 1,
+    op: 'query',
+    query: { student_id: 11 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:40.482Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6252'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1018446, w: 232123 },
+      timeLockedMicros: { r: 5860035, w: 0 }
+    },
+    millis: 4841,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 2,
+    op: 'query',
+    query: { student_id: 12 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:45.559Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd625a'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 3155536, w: 4 },
+      timeLockedMicros: { r: 7838309, w: 0 }
+    },
+    millis: 4865,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 5,
+    op: 'query',
+    query: { student_id: 13 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:50.428Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6266'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 3299777, w: 4 },
+      timeLockedMicros: { r: 7895182, w: 0 }
+    },
+    millis: 5061,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 4,
+    op: 'query',
+    query: { student_id: 14 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:55.493Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6272'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1019562, w: 231574 },
+      timeLockedMicros: { r: 5240462, w: 0 }
+    },
+    millis: 4221,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 2,
+    op: 'query',
+    query: { student_id: 15 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:59.949Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd627a'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1018916, w: 235025 },
+      timeLockedMicros: { r: 5817168, w: 0 }
+    },
+    millis: 4798,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 3,
+    op: 'query',
+    query: { student_id: 16 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:04:04.985Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd628e'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1019547, w: 232987 },
+      timeLockedMicros: { r: 5879899, w: 0 }
+    },
+    millis: 4860,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 1,
+    op: 'query',
+    query: { student_id: 17 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:04:10.082Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6299'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1019230, w: 233567 },
+      timeLockedMicros: { r: 5209119, w: 0 }
+    },
+    millis: 4190,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 2,
+    op: 'query',
+    query: { student_id: 19 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:04:20.314Z'),
+    user: ''
+  }
+]
+Type "it" for more
+profiles> db.profiles.find({responseLength:{$gt:50},{op:"query"})
+Uncaught:
+SyntaxError: Unexpected token (1:42)
+
+> 1 | db.profiles.find({responseLength:{$gt:50},{op:"query"})
+    |                                           ^
+  2 |
+
+profiles> db.profiles.find({responseLength:{$gt:50},{op:"query"}})
+Uncaught:
+SyntaxError: Unexpected token (1:42)
+
+> 1 | db.profiles.find({responseLength:{$gt:50},{op:"query"}})
+    |                                           ^
+  2 |
+
+profiles> db.profiles.find({responseLength:{$gt:50} op:"query"})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:42)
+
+> 1 | db.profiles.find({responseLength:{$gt:50} op:"query"})
+    |                                           ^
+  2 |
+
+profiles> db.profiles.find({
+...   responseLength: { $gt: 50 },
+...   op: "query"
+... })
+... db.profiles.find({
+... use profiles
+Uncaught:
+SyntaxError: Unexpected token, expected "," (6:4)
+
+  4 | })
+  5 | db.profiles.find({
+> 6 | use profiles
+    |     ^
+  7 |
+
+profiles> db.profiles.find({responseLength:{$gt:60},op:"query"})
+[
+  {
+    _id: ObjectId('552786262cec76ed95fd61d1'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 10600017, w: 143496 },
+      timeLockedMicros: { r: 22760089, w: 0 }
+    },
+    millis: 12560,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 176,
+    op: 'query',
+    query: { student_id: 0 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:02:37.091Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d9'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1014386, w: 234618 },
+      timeLockedMicros: { r: 7653438, w: 0 }
+    },
+    millis: 6639,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 1,
+    op: 'query',
+    query: { student_id: 1 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:02:43.973Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61e4'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 4182244, w: 5 },
+      timeLockedMicros: { r: 13495141, w: 0 }
+    },
+    millis: 9493,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 9,
+    op: 'query',
+    query: { student_id: 2 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:02:53.470Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61e9'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 3301079, w: 4 },
+      timeLockedMicros: { r: 10181319, w: 0 }
+    },
+    millis: 7355,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 5,
+    op: 'query',
+    query: { student_id: 3 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:00.828Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61ff'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 4175194, w: 4 },
+      timeLockedMicros: { r: 8877208, w: 0 }
+    },
+    millis: 4886,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 8,
+    op: 'query',
+    query: { student_id: 5 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:10.848Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6209'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2628184, w: 142 },
+      timeLockedMicros: { r: 7767271, w: 0 }
+    },
+    millis: 6236,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 2,
+    op: 'query',
+    query: { student_id: 6 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:17.088Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6214'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 3064752, w: 232613 },
+      timeLockedMicros: { r: 7295385, w: 0 }
+    },
+    millis: 4232,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 5,
+    op: 'query',
+    query: { student_id: 7 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:21.556Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd621e'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1025017, w: 233161 },
+      timeLockedMicros: { r: 5917050, w: 0 }
+    },
+    millis: 4892,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 3,
+    op: 'query',
+    query: { student_id: 4 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:05.957Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6225'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2133547, w: 4 },
+      timeLockedMicros: { r: 6822411, w: 0 }
+    },
+    millis: 4871,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 3,
+    op: 'query',
+    query: { student_id: 8 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:26.431Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6230'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2040640, w: 230687 },
+      timeLockedMicros: { r: 6155986, w: 0 }
+    },
+    millis: 4115,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 5,
+    op: 'query',
+    query: { student_id: 9 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:30.780Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd623c'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 4548894, w: 4 },
+      timeLockedMicros: { r: 9168619, w: 0 }
+    },
+    millis: 5087,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 55,
+    op: 'query',
+    query: { student_id: 10 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:35.875Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6247'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1020550, w: 231927 },
+      timeLockedMicros: { r: 5392245, w: 0 }
+    },
+    millis: 4371,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 1,
+    op: 'query',
+    query: { student_id: 11 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:40.482Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6252'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1018446, w: 232123 },
+      timeLockedMicros: { r: 5860035, w: 0 }
+    },
+    millis: 4841,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 2,
+    op: 'query',
+    query: { student_id: 12 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:45.559Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd625a'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 3155536, w: 4 },
+      timeLockedMicros: { r: 7838309, w: 0 }
+    },
+    millis: 4865,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 5,
+    op: 'query',
+    query: { student_id: 13 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:50.428Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6266'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 3299777, w: 4 },
+      timeLockedMicros: { r: 7895182, w: 0 }
+    },
+    millis: 5061,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 4,
+    op: 'query',
+    query: { student_id: 14 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:55.493Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6272'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1019562, w: 231574 },
+      timeLockedMicros: { r: 5240462, w: 0 }
+    },
+    millis: 4221,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 2,
+    op: 'query',
+    query: { student_id: 15 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:59.949Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd627a'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1018916, w: 235025 },
+      timeLockedMicros: { r: 5817168, w: 0 }
+    },
+    millis: 4798,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 3,
+    op: 'query',
+    query: { student_id: 16 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:04:04.985Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd628e'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1019547, w: 232987 },
+      timeLockedMicros: { r: 5879899, w: 0 }
+    },
+    millis: 4860,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 1,
+    op: 'query',
+    query: { student_id: 17 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:04:10.082Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6299'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1019230, w: 233567 },
+      timeLockedMicros: { r: 5209119, w: 0 }
+    },
+    millis: 4190,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 2,
+    op: 'query',
+    query: { student_id: 19 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:04:20.314Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd62a5'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1019596, w: 280138 },
+      timeLockedMicros: { r: 5943684, w: 0 }
+    },
+    millis: 4924,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 3,
+    op: 'query',
+    query: { student_id: 20 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:04:25.521Z'),
+    user: ''
+  }
+]
+Type "it" for more
+profiles> db.profiles.find({responseLength:{$lt:60},op:"query"})
+[
+  {
+    _id: ObjectId('552786262cec76ed95fd61cc'),
+    client: '0.0.0.0',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2, w: 120711 },
+      timeLockedMicros: { r: 58, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.system.indexes',
+    nscanned: 3,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { expireAfterSeconds: { '$exists': true } },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:02:33.060Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd623b'),
+    client: '0.0.0.0',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2, w: 2972 },
+      timeLockedMicros: { r: 45, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.system.indexes',
+    nscanned: 4,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { expireAfterSeconds: { '$exists': true } },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:03:33.153Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd62ba'),
+    client: '0.0.0.0',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1, w: 127483 },
+      timeLockedMicros: { r: 42, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.system.indexes',
+    nscanned: 4,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { expireAfterSeconds: { '$exists': true } },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:04:33.384Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd632d'),
+    client: '0.0.0.0',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1, w: 2 },
+      timeLockedMicros: { r: 44, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.system.indexes',
+    nscanned: 4,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { expireAfterSeconds: { '$exists': true } },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:05:33.411Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd63c0'),
+    client: '0.0.0.0',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1, w: 33951 },
+      timeLockedMicros: { r: 41, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.system.indexes',
+    nscanned: 4,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { expireAfterSeconds: { '$exists': true } },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:06:33.549Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6442'),
+    client: '0.0.0.0',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1, w: 19216 },
+      timeLockedMicros: { r: 45, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.system.indexes',
+    nscanned: 4,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { expireAfterSeconds: { '$exists': true } },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:07:33.657Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd64c1'),
+    client: '0.0.0.0',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1, w: 3052 },
+      timeLockedMicros: { r: 41, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.system.indexes',
+    nscanned: 4,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { expireAfterSeconds: { '$exists': true } },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:08:33.768Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6540'),
+    client: '0.0.0.0',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2, w: 38696 },
+      timeLockedMicros: { r: 63, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.system.indexes',
+    nscanned: 4,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { expireAfterSeconds: { '$exists': true } },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:09:34.037Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd65ad'),
+    client: '0.0.0.0',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1, w: 24 },
+      timeLockedMicros: { r: 44, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.system.indexes',
+    nscanned: 4,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { expireAfterSeconds: { '$exists': true } },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:10:34.035Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd66f3'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 3, w: 2 },
+      timeLockedMicros: { r: 481, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.student_grades',
+    nscanned: 1000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { class_id: 0 },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:11:25.651Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6700'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2, w: 2 },
+      timeLockedMicros: { r: 435, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.student_grades',
+    nscanned: 1000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { class_id: 8 },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:11:25.660Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd671f'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2, w: 67 },
+      timeLockedMicros: { r: 433, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.student_grades',
+    nscanned: 1000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { class_id: 24 },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:11:25.674Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6739'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1, w: 2 },
+      timeLockedMicros: { r: 423, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.student_grades',
+    nscanned: 1000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { class_id: 37 },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:11:25.687Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6749'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2, w: 1 },
+      timeLockedMicros: { r: 432, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.student_grades',
+    nscanned: 1000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { class_id: 46 },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:11:25.694Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6752'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2, w: 1 },
+      timeLockedMicros: { r: 429, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.student_grades',
+    nscanned: 1000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { class_id: 48 },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:11:25.696Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6769'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1, w: 1 },
+      timeLockedMicros: { r: 425, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.student_grades',
+    nscanned: 1000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { class_id: 57 },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:11:25.703Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6786'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2, w: 1 },
+      timeLockedMicros: { r: 430, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.student_grades',
+    nscanned: 1000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { class_id: 78 },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:11:25.722Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6794'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1, w: 1 },
+      timeLockedMicros: { r: 430, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.student_grades',
+    nscanned: 1000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { class_id: 85 },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:11:25.728Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd67ac'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1, w: 1 },
+      timeLockedMicros: { r: 428, w: 0 }
+    },
+    millis: 0,
+    nreturned: 0,
+    ns: 'school2.student_grades',
+    nscanned: 1000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 0,
+    op: 'query',
+    query: { class_id: 59 },
+    responseLength: 20,
+    ts: ISODate('2012-11-20T20:11:25.705Z'),
+    user: ''
+  }
+]
+profiles> db.profiles.find({responseLength:{$lt:60},op:"insert"})
+
+profiles> db.profiles.find({responseLength:{$lt:70},op:"insert"})
+
+profiles> db.profiles.find({responseLength:{$lt:100},op:"insert"})
+
+profiles> db.profiles.find({responseLength:{$ne:100},op:"insert"})
+[
+  {
+    _id: ObjectId('552786262cec76ed95fd61cd'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 5 },
+      timeLockedMicros: { r: 0, w: 5143 }
+    },
+    millis: 5,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.096Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61ce'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 17 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.097Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61cf'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 16 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.097Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d0'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 16 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.097Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d2'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.098Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d3'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.098Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d4'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 16 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.098Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d5'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.098Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d6'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.098Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d7'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:37.099Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61d8'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 4 },
+      timeLockedMicros: { r: 0, w: 82 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.974Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61da'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 17 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.974Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61db'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.974Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61dc'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 4 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.974Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61dd'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.975Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61de'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 16 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.975Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61df'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.975Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61e0'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 3 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.975Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61e1'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.976Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd61e2'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 0, w: 2 },
+      timeLockedMicros: { r: 0, w: 15 }
+    },
+    millis: 0,
+    ns: 'school2.student_grades',
+    numYield: 0,
+    op: 'insert',
+    ts: ISODate('2012-11-20T20:02:43.976Z'),
+    user: ''
+  }
+]
+Type "it" for more
+profiles> db.profiles.find({$numYield:{$gt:50},op:"insert"})
+MongoServerError[BadValue]: unknown top level operator: $numYield. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.
+profiles> db.profiles.find({numYield:{$gt:50},op:"insert"})
+
+profiles> db.profiles.find({numYield:1760},op:"insert"})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:35)
+
+> 1 | db.profiles.find({numYield:1760},op:"insert"})
+    |                                    ^
+  2 |
+
+profiles> db.profiles.find({numYield:1760,op:"insert"})
+
+profiles> db.profiles.find({ numYield: 1760, op: "insert" })
+... 
+
+profiles> db.profiles.find({ numYield: 1760, op: "insert" })
+
+profiles> db.profiles.find({ numYield:{$gt:50}})
+[
+  {
+    _id: ObjectId('552786262cec76ed95fd61d1'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 10600017, w: 143496 },
+      timeLockedMicros: { r: 22760089, w: 0 }
+    },
+    millis: 12560,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 176,
+    op: 'query',
+    query: { student_id: 0 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:02:37.091Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd623c'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 4548894, w: 4 },
+      timeLockedMicros: { r: 9168619, w: 0 }
+    },
+    millis: 5087,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 55,
+    op: 'query',
+    query: { student_id: 10 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:03:35.875Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd62bc'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 4873456, w: 4 },
+      timeLockedMicros: { r: 9439125, w: 0 }
+    },
+    millis: 5080,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 1531,
+    op: 'query',
+    query: { student_id: 22 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:04:35.663Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd62cd'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 5580001, w: 3 },
+      timeLockedMicros: { r: 10428354, w: 0 }
+    },
+    millis: 5587,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 706,
+    op: 'query',
+    query: { student_id: 23 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:04:41.255Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6347'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 1021227, w: 239320 },
+      timeLockedMicros: { r: 6389881, w: 0 }
+    },
+    millis: 5369,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 52,
+    op: 'query',
+    query: { student_id: 34 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:05:45.390Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd63bb'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 3754028, w: 219437 },
+      timeLockedMicros: { r: 8540078, w: 0 }
+    },
+    millis: 5000,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 400,
+    op: 'query',
+    query: { student_id: 44 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:06:36.003Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd63c8'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 3165294, w: 231425 },
+      timeLockedMicros: { r: 7935958, w: 0 }
+    },
+    millis: 4975,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 992,
+    op: 'query',
+    query: { student_id: 45 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:06:41.213Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6443'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 2973380, w: 230360 },
+      timeLockedMicros: { r: 7732175, w: 0 }
+    },
+    millis: 4944,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 308,
+    op: 'query',
+    query: { student_id: 56 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:07:36.862Z'),
+    user: ''
+  },
+  {
+    _id: ObjectId('552786262cec76ed95fd6543'),
+    client: '127.0.0.1',
+    keyUpdates: 0,
+    lockStats: {
+      timeAcquiringMicros: { r: 9058928, w: 4 },
+      timeLockedMicros: { r: 17657301, w: 0 }
+    },
+    millis: 9059,
+    nreturned: 10,
+    ns: 'school2.students',
+    nscanned: 10000000,
+    ntoreturn: 0,
+    ntoskip: 0,
+    numYield: 628,
+    op: 'query',
+    query: { student_id: 79 },
+    responseLength: 2350,
+    ts: ISODate('2012-11-20T20:09:34.038Z'),
+    user: ''
+  }
+]
+profiles> 
